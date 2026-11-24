@@ -1,0 +1,5 @@
+[Name] LazyGit
+[Summary] A simple terminal UI for git commands
+[Description] lazygit is a simple terminal UI for git commands, written in Go with the gocui library.
+[License] MIT
+[Homepage] https://github.com/jesseduffield/lazygit

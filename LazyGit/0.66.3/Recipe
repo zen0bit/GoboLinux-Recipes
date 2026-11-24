@@ -1,0 +1,23 @@
+# Recipe for version 0.66.3
+# Recipe (MakeRecipe) for LazyGit by ...
+compile_version=017-GIT
+url="https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.66.3.tar.gz"
+file_size=5160892
+file_md5=0bf7b2fa1cd5bdcc93e3c2cee00c9098
+dir='lazygit-0.66.3'
+recipe_type=manifest
+
+environment=(
+    "GO111MODULE=on"
+    "CGO_ENABLED=0"
+    "GOROOT=$golang_path"
+)
+
+do_build() {
+    go build -trimpath -ldflags="-s -w" -o lazygit
+}
+
+do_install() {
+    $sudo_exec mkdir -p "$target/bin"
+    $sudo_exec install -m 755 lazygit "$target/bin/lazygit"
+}
